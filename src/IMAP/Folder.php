@@ -285,6 +285,8 @@ class Folder {
                     }
                     $query .= $statement[0].' "'.$value.'"';
                 }
+                //add a space between criteria
+                $query .= ' ';
             }
 
             $availableMessages = imap_search($this->getClient()->getConnection(), $query, SE_UID, $charset);
